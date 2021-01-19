@@ -68,44 +68,44 @@ class SheetCalculator extends JPanel {
 			
 		myScreen1.setLayout(new GridLayout (4,4));
 		
-		ActionListener insertar = new InsertaNumero ();
+		ActionListener insert = new InsertNumber ();
 		
 		//to insert the second parameter
 		
-		ActionListener orden = new AccionOrden();
+		ActionListener order = new AccionOrden();
 		//inserting buttons in the order we want to appear:
-		ponerBoton ("7", insertar);
+		ponerBoton ("7", insert);
 				
-		ponerBoton ("8", insertar);
+		ponerBoton ("8", insert);
 		
-		ponerBoton ("9", insertar);
+		ponerBoton ("9", insert);
 		
-		ponerBoton ("/", orden);
+		ponerBoton ("/", order);
 		
-		ponerBoton ("4", insertar);
+		ponerBoton ("4", insert);
 		
-		ponerBoton ("5", insertar);
+		ponerBoton ("5", insert);
 		
-		ponerBoton ("6", insertar);
+		ponerBoton ("6", insert);
 		
-		ponerBoton ("*", orden);
+		ponerBoton ("*", order);
 		
-		ponerBoton ("1", insertar);
+		ponerBoton ("1", insert);
 		
-		ponerBoton ("2", insertar);
+		ponerBoton ("2", insert);
 		
-		ponerBoton ("3", insertar);
+		ponerBoton ("3", insert);
 		
-		ponerBoton ("-", orden);
+		ponerBoton ("-", order);
 		
 		
-		ponerBoton ("0", insertar);
+		ponerBoton ("0", insert);
 		
-		ponerBoton (".", orden);
+		ponerBoton (".", order);
 		
-		ponerBoton ("=", orden);
+		ponerBoton ("=", order);
 		
-		ponerBoton ("+", orden);
+		ponerBoton ("+", order);
 		
 				
 		add (myScreen1, BorderLayout.CENTER);
@@ -125,18 +125,18 @@ class SheetCalculator extends JPanel {
 	
 	}	
 
-	private class InsertaNumero implements ActionListener {
+	private class InsertNumber implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 		
-		String entrada = e.getActionCommand();
+		String entry = e.getActionCommand();
 		/*it saves into the variable the text the button that creates the event.getAction returns the command
 			string related to the action*/
 			
 			
 			if (start) {
-					/*if (principio == true) It is the same than the original because no providing a comparison operator it will be equal to true.*/
+					/*if (start == true) It is the same than the original because no providing a comparison operator it will be equal to true.*/
 				
 				screen.setText("");
 			
@@ -144,7 +144,7 @@ class SheetCalculator extends JPanel {
 							
 				}
 			
-			screen.setText (screen.getText() + entrada);
+			screen.setText (screen.getText() + entry);
 			/*BUTTON TEXT. Writing the text at the screen. It will add what you had written before
 			 and then you can add the very new thing */
 		}
@@ -156,7 +156,7 @@ class SheetCalculator extends JPanel {
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			
-			String operacion  = e.getActionCommand();
+			String operation  = e.getActionCommand();
 			//To save the String that correspond with the text of the button.
 			
 						
@@ -164,7 +164,7 @@ class SheetCalculator extends JPanel {
 			/*ParseDouble to convert string to double, take what is at the screen, "7" to 7.0, and pass that value
 			 * as parameter for the calculation. */
 			 
-			lastOperation = operacion;
+			lastOperation = operation;
 			//contents last operation made by the user.
 			 
 			start = true;
